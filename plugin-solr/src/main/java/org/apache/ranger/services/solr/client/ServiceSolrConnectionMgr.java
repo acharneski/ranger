@@ -21,8 +21,8 @@ package org.apache.ranger.services.solr.client;
 
 import java.util.Map;
 
-import org.apache.solr.client.solrj.SolrClient;
-import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.apache.ranger.index.solr.client.solrj.SolrClient;
+import org.apache.ranger.index.solr.client.solrj.impl.HttpSolrClient;
 
 public class ServiceSolrConnectionMgr {
 

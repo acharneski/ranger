@@ -26,12 +26,12 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.ranger.plugin.classloader.RangerPluginClassLoader;
-import org.apache.solr.common.util.NamedList;
-import org.apache.solr.handler.component.ResponseBuilder;
-import org.apache.solr.handler.component.SearchComponent;
-import org.apache.solr.security.AuthorizationContext;
-import org.apache.solr.security.AuthorizationPlugin;
-import org.apache.solr.security.AuthorizationResponse;
+import org.apache.ranger.index.solr.common.util.NamedList;
+import org.apache.ranger.index.solr.handler.component.ResponseBuilder;
+import org.apache.ranger.index.solr.handler.component.SearchComponent;
+import org.apache.ranger.index.solr.security.AuthorizationContext;
+import org.apache.ranger.index.solr.security.AuthorizationPlugin;
+import org.apache.ranger.index.solr.security.AuthorizationResponse;
 
 public class RangerSolrAuthorizer extends SearchComponent implements AuthorizationPlugin {
 	private static final Log LOG = LogFactory

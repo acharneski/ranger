@@ -20,9 +20,10 @@
 package org.apache.ranger.audit.utils;
 
 import org.apache.ranger.audit.provider.MiscUtil;
-import org.apache.solr.client.solrj.SolrClient;
-import org.apache.solr.client.solrj.response.UpdateResponse;
-import org.apache.solr.common.SolrInputDocument;
+import org.apache.ranger.index.solr.SolrClient;
+import org.apache.ranger.index.solr.client.solrj.response.UpdateResponse;
+import org.apache.ranger.index.solr.common.SolrException;
+import org.apache.ranger.index.solr.common.SolrInputDocument;
 
 import java.security.PrivilegedExceptionAction;
 import java.util.Collection;

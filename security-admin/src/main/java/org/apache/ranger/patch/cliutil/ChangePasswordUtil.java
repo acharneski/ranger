@@ -26,7 +26,7 @@ import org.apache.ranger.db.RangerDaoManager;
 import org.apache.ranger.entity.XXPortalUser;
 import org.apache.ranger.patch.BaseLoader;
 import org.apache.ranger.util.CLIUtil;
-import org.apache.solr.common.StringUtils;
+import org.apache.ranger.index.solr.common.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

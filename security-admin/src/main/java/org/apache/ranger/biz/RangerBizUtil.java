@@ -100,6 +100,7 @@ public class RangerBizUtil {
 	private static int PATH_CHAR_SET_LEN = PATH_CHAR_SET.length;
 	public static final String AUDIT_STORE_RDBMS = "DB";
 	public static final String AUDIT_STORE_SOLR = "solr";
+	public static final String AUDIT_STORE_ElasticSearch = "elasticSearch";
 
 	String auditDBType = AUDIT_STORE_RDBMS;
 

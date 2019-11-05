@@ -128,7 +128,8 @@
         <htrace-core.version>4.1.0-incubating</htrace-core.version>
         <httpcomponents.httpclient.version>4.5.3</httpcomponents.httpclient.version>
         <httpcomponents.httpcore.version>4.4.6</httpcomponents.httpcore.version>
-        <httpcomponents.httpmime.version>4.5.3</httpcomponents.httpmime.version>
+        <httpcomponents.httpmime.version>4.5.6</httpcomponents.httpmime.version>
+        <httpcomponents.httpasyncclient.version>4.1.2</httpcomponents.httpasyncclient.version>
         <javax.persistence.version>2.1.0</javax.persistence.version>
         <javax.servlet.version>3.1.0</javax.servlet.version>
         <javax-inject.version>1</javax-inject.version>
@@ -194,6 +195,7 @@
         <presto.guice.version>4.2.2</presto.guice.version>
         <presto.guava.version>26.0-jre</presto.guava.version>
         <presto.validation-api.version>2.0.1.Final</presto.validation-api.version>
+
     </properties>
     <profiles>
         <profile>
@@ -903,21 +905,26 @@
                 <artifactId>gson</artifactId>
                 <version>${gson.version}</version>
             </dependency>
-			<dependency>
-				<groupId>com.webcohesion.enunciate</groupId>
-				<artifactId>enunciate-core-annotations</artifactId>
-				<version>${enunciate.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-beanutils</groupId>
-				<artifactId>commons-beanutils</artifactId>
-				<version>${commons.beanutils.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.hbase</groupId>
-				<artifactId>hbase-client</artifactId>
-				<version>${hbase.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>com.webcohesion.enunciate</groupId>
+                <artifactId>enunciate-core-annotations</artifactId>
+                <version>${enunciate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>javax.el</artifactId>
+                <version>${glassfish.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons.beanutils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-client</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
             <dependency>
                 <groupId>javax.annotation</groupId>
                 <artifactId>jsr250-api</artifactId>
@@ -983,7 +990,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.0.2</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1051,7 +1058,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>1.4.1</version>
+                <version>3.0.0-M3</version>
                 <executions>
                     <execution>
                         <id>enforce-versions</id>

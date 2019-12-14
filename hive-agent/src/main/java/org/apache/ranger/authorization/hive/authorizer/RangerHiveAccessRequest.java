@@ -52,7 +52,6 @@ public class RangerHiveAccessRequest extends RangerAccessRequestImpl {
 
 		if(context != null) {
 			this.setRequestData(context.getCommandString());
-			this.setForwardedAddresses(context.getForwardedAddresses());
 			this.setRemoteIPAddress(context.getIpAddress());
 		}
 

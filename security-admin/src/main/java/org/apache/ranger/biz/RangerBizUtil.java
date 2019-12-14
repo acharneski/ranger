@@ -1522,6 +1522,8 @@ public class RangerBizUtil {
 			  opContext.setBulkModeContext(val);
 			  RangerContextHolder.setOpContext(opContext);
 		}
+//		RangerAdminOpContext opContext = RangerContextHolder.getOpContext();
+//		if(null != opContext) opContext.setBulkModeContext(val);
 		return isBulkMode();
 	}
 

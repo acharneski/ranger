@@ -30,20 +30,20 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.apache.ranger.index.solr.common.params.CoreAdminParams;
 import org.apache.ranger.plugin.client.BaseClient;
 import org.apache.ranger.plugin.service.ResourceLookupContext;
 import org.apache.ranger.plugin.util.PasswordUtils;
 import org.apache.ranger.plugin.util.TimedEventUtil;
-import org.apache.solr.client.solrj.SolrClient;
-import org.apache.solr.client.solrj.SolrQuery;
-import org.apache.solr.client.solrj.SolrResponse;
-import org.apache.solr.client.solrj.request.CollectionAdminRequest;
-import org.apache.solr.client.solrj.request.CoreAdminRequest;
-import org.apache.solr.client.solrj.request.QueryRequest;
-import org.apache.solr.client.solrj.response.CoreAdminResponse;
-import org.apache.solr.client.solrj.response.QueryResponse;
-import org.apache.solr.common.params.CoreAdminParams.CoreAdminAction;
-import org.apache.solr.common.util.SimpleOrderedMap;
+import org.apache.ranger.index.solr.client.solrj.SolrClient;
+import org.apache.ranger.index.solr.client.solrj.SolrQuery;
+import org.apache.ranger.index.solr.client.solrj.SolrResponse;
+import org.apache.ranger.index.solr.client.solrj.request.CollectionAdminRequest;
+import org.apache.ranger.index.solr.client.solrj.request.CoreAdminRequest;
+import org.apache.ranger.index.solr.client.solrj.request.QueryRequest;
+import org.apache.ranger.index.solr.client.solrj.response.CoreAdminResponse;
+import org.apache.ranger.index.solr.client.solrj.response.QueryResponse;
+import org.apache.ranger.index.solr.common.util.SimpleOrderedMap;
 import org.apache.commons.collections.CollectionUtils;
 
 public class ServiceSolrClient {
@@ -127,7 +127,7 @@ public class ServiceSolrClient {
 	public List<String> getCoresList(List<String> ignoreCollectionList)
 			throws Exception {
 		CoreAdminRequest request = new CoreAdminRequest();
-		request.setAction(CoreAdminAction.STATUS);
+		request.setAction(CoreAdminParams.CoreAdminAction.STATUS);
 		String decPassword = getDecryptedPassword();
         if (username != null && decPassword != null) {
 		    request.setBasicAuthCredentials(username, decPassword);

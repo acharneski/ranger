@@ -32,10 +32,10 @@ import org.apache.ranger.audit.model.AuditEventBase;
 import org.apache.ranger.audit.model.AuthzAuditEvent;
 import org.apache.ranger.audit.provider.MiscUtil;
 import org.apache.ranger.audit.utils.SolrAppUtil;
-import org.apache.solr.client.solrj.SolrClient;
-import org.apache.solr.client.solrj.impl.HttpSolrClient;
-import org.apache.solr.client.solrj.response.UpdateResponse;
-import org.apache.solr.common.SolrInputDocument;
+import org.apache.ranger.index.solr.client.solrj.SolrClient;
+import org.apache.ranger.index.solr.client.solrj.impl.HttpSolrClient;
+import org.apache.ranger.index.solr.client.solrj.response.UpdateResponse;
+import org.apache.ranger.index.solr.common.SolrInputDocument;
 
 public class SolrAuditProvider extends AuditDestination {
 	private static final Log LOG = LogFactory.getLog(SolrAuditProvider.class);

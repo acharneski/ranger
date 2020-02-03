@@ -33,7 +33,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.ranger.plugin.model.RangerPolicy.RangerPolicyResource;
 import org.apache.ranger.plugin.model.RangerPolicy.RangerPolicyItemCondition;
-import org.apache.solr.common.StringUtils;
+import org.apache.ranger.index.solr.common.StringUtils;
 
 public class RangerPolicyResourceSignature {
 

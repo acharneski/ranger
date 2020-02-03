@@ -38,20 +38,20 @@ import org.apache.ranger.plugin.policyengine.RangerAccessResourceImpl;
 import org.apache.ranger.plugin.policyengine.RangerAccessResult;
 import org.apache.ranger.plugin.service.RangerBasePlugin;
 import org.apache.ranger.plugin.util.RangerPerfTracer;
-import org.apache.solr.common.SolrException;
-import org.apache.solr.common.params.ModifiableSolrParams;
-import org.apache.solr.common.params.SolrParams;
-import org.apache.solr.common.util.NamedList;
-import org.apache.solr.core.SolrCore;
-import org.apache.solr.handler.component.ResponseBuilder;
-import org.apache.solr.handler.component.SearchComponent;
-import org.apache.solr.request.LocalSolrQueryRequest;
-import org.apache.solr.request.SolrQueryRequest;
-import org.apache.solr.security.AuthorizationContext.RequestType;
-import org.apache.solr.security.AuthorizationPlugin;
-import org.apache.solr.security.AuthorizationResponse;
-import org.apache.solr.security.AuthorizationContext;
-import org.apache.solr.security.AuthorizationContext.CollectionRequest;
+import org.apache.ranger.index.solr.common.SolrException;
+import org.apache.ranger.index.solr.common.params.ModifiableSolrParams;
+import org.apache.ranger.index.solr.common.params.SolrParams;
+import org.apache.ranger.index.solr.common.util.NamedList;
+import org.apache.ranger.index.solr.core.SolrCore;
+import org.apache.ranger.index.solr.handler.component.ResponseBuilder;
+import org.apache.ranger.index.solr.handler.component.SearchComponent;
+import org.apache.ranger.index.solr.request.LocalSolrQueryRequest;
+import org.apache.ranger.index.solr.request.SolrQueryRequest;
+import org.apache.ranger.index.solr.security.AuthorizationContext.RequestType;
+import org.apache.ranger.index.solr.security.AuthorizationPlugin;
+import org.apache.ranger.index.solr.security.AuthorizationResponse;
+import org.apache.ranger.index.solr.security.AuthorizationContext;
+import org.apache.ranger.index.solr.security.AuthorizationContext.CollectionRequest;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -131,7 +131,7 @@ public class RangerSolrAuthorizer extends SearchComponent implements Authorizati
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.apache.solr.security.SolrAuthorizationPlugin#init(java.util.Map)
+	 * @see org.apache.ranger.index.solr.security.SolrAuthorizationPlugin#init(java.util.Map)
 	 */
 	@Override
 	public void init(Map<String, Object> initInfo) {
@@ -205,7 +205,7 @@ public class RangerSolrAuthorizer extends SearchComponent implements Authorizati
 	 * (non-Javadoc)
 	 *
 	 * @see
-	 * org.apache.solr.security.SolrAuthorizationPlugin#authorize(org.apache
+	 * org.apache.ranger.index.solr.security.SolrAuthorizationPlugin#authorize(org.apache
 	 * .solr.security.SolrRequestContext)
 	 */
 	@Override
@@ -329,9 +329,9 @@ public class RangerSolrAuthorizer extends SearchComponent implements Authorizati
 			} else {
 				filterQuery = getConjunctiveFilterQueryStr(roles);
 			}
-			ModifiableSolrParams newParams = new ModifiableSolrParams(rb.req.getParams());
+			ModifiableSolrParams newParams = new ModifiableSolrParams(rb.req_getParams());
 			newParams.add("fq", filterQuery);
-			rb.req.setParams(newParams);
+			rb.req_setParams(newParams);
 			if (logger.isDebugEnabled()) {
 				logger.debug("Adding filter query {" + filterQuery + "} for user {" + userName + "} with roles {" + roles + "}");
 			}
